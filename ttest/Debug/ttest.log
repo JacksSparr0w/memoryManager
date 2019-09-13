@@ -1,0 +1,6 @@
+﻿  mmemory.c
+D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(12,36): warning C4047:  ==: "size_t" отличается по уровням косвенного обращения от "void *"
+D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(36,18): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(100,49): warning C4047:  =: "VA *" отличается по уровням косвенного обращения от "VA"
+D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(108,22): warning C4047:  =: "VA *" отличается по уровням косвенного обращения от "VA"
+  ttest.vcxproj -> D:\visual studio\repos\test\ttest\Debug\ttest.exe
