@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  UnitTest.cpp
+     Создается библиотека D:\visual studio\repos\test\ttest\Debug\UnitTest.lib и объект D:\visual studio\repos\test\ttest\Debug\UnitTest.exp
+UnitTest.obj : error LNK2019: ссылка на неразрешенный внешний символ "int __cdecl _init(int,int)" (?_init@@YAHHH@Z) в функции "public: void __thiscall UnitTest::UnitTest::TestMethod1(void)" (?TestMethod1@UnitTest@1@QAEXXZ)
+D:\visual studio\repos\test\ttest\Debug\UnitTest.dll : fatal error LNK1120: неразрешенных внешних элементов: 1

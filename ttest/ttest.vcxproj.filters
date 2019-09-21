@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ttest.cpp">
+    <ClCompile Include="mmemory.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\memory_manager\memory_manager\mmemory.c">
+    <ClCompile Include="ttest.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\memory_manager\memory_manager\mmemory.h">
+    <ClInclude Include="mmemory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

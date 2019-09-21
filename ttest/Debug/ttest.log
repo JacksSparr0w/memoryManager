@@ -1,6 +1,9 @@
 ﻿  mmemory.c
-D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(12,36): warning C4047:  ==: "size_t" отличается по уровням косвенного обращения от "void *"
-D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(36,18): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
-D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(100,49): warning C4047:  =: "VA *" отличается по уровням косвенного обращения от "VA"
-D:\visual studio\repos\memory_manager\memory_manager\mmemory.c(108,22): warning C4047:  =: "VA *" отличается по уровням косвенного обращения от "VA"
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(11,36): warning C4047:  ==: "size_t" отличается по уровням косвенного обращения от "void *"
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(35,18): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(102,49): warning C4047:  =: "VA *" отличается по уровням косвенного обращения от "VA"
+  ttest.c
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(110,22): warning C4047:  =: "VA *" отличается по уровням косвенного обращения от "VA"
+  Создание кода...
+D:\visual studio\repos\test\ttest\ttest\ttest.c(51,21): warning C4013:  malloc: нет определения; предполагается "extern" с возвратом типа "int"
   ttest.vcxproj -> D:\visual studio\repos\test\ttest\Debug\ttest.exe

@@ -1,0 +1,8 @@
+﻿  ttest.c
+D:\visual studio\repos\test\ttest\ttest\ttest.c(51,21): warning C4013:  malloc: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода
+  5 of 5 functions (100.0%) were compiled.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  ttest.vcxproj -> D:\visual studio\repos\test\ttest\Release\ttest.exe
