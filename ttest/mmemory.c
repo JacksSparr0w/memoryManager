@@ -69,12 +69,40 @@ int _free(VA ptr)
 
 int _read(VA ptr, void* pBuffer, size_t szBuffer)
 {
-	return 0;
+	if (list == NULL) {
+		return UNKNOWN_ERROR;
+	}
+	MemoryBlock* block = findBlock(ptr);
+	if (ptr == NULL || pBuffer == NULL || szBuffer < 0 || block == NULL) {
+		return INVALID_PARAMETERS;
+	}
+	if (block->size <= szBuffer) {
+		memcpy(pBuffer, ptr, block->size);
+		return SUCCESS;
+	}
+	else {
+		return LACK_OF_MEMORY;
+	}
 }
 
 int _write(VA ptr, void* pBuffer, size_t szBuffer)
 {
-	return 0;
+	if (list == NULL) {
+		return UNKNOWN_ERROR;
+	}
+
+	MemoryBlock* block = findBlock(ptr);
+	if (ptr == NULL || pBuffer == NULL || szBuffer < 0 || block == NULL) {
+		return INVALID_PARAMETERS;
+	}
+
+	if (block->size >= szBuffer) {
+		memcpy(ptr, pBuffer, block->size);
+		return SUCCESS;
+	}
+	else {
+		return LACK_OF_MEMORY;
+	}
 }
 
 int _init(int n, int szPage)
@@ -99,7 +127,7 @@ int _init(int n, int szPage)
 
 MemoryBlock* newMemoryBlock(size_t size) {
 	MemoryBlock* memoryBlock = (MemoryBlock*)malloc(sizeof(MemoryBlock));
-	memoryBlock->va = (VA)malloc(size * sizeof(VA));
+	memoryBlock->va = (VA*)malloc(size * sizeof(VA));
 	memoryBlock->size = size;
 	return memoryBlock;
 }

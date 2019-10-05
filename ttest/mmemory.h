@@ -30,6 +30,8 @@ typedef struct List {			// Тип описывающий всю доступную память
 	MemoryBlock* last;
 } List;
 
+List* list;
+
 /**
 	@func	_malloc
 	@brief	Выделяет блок памяти определенного размера
@@ -115,7 +117,10 @@ int _write(VA ptr, void* pBuffer, size_t szBuffer);
  **/
 int _init(int n, int szPage);
 
-
 MemoryBlock* newMemoryBlock(size_t size);
 
 MemoryBlock* findBlock(VA ptr);
+
+List* getList();
+
+int set(List list);
