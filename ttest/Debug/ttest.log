@@ -1,1 +1,26 @@
-﻿  ttest.vcxproj -> D:\visual studio\repos\test\ttest\Debug\ttest.exe
+﻿  ttest.c
+D:\visual studio\repos\test\ttest\ttest\ttest.c(16,22): warning C4013:  malloc: нет определения; предполагается "extern" с возвратом типа "int"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(72,24): warning C4047:  ==: "VA *" отличается по уровням косвенного обращения от "VA"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(72,43): warning C4047:  ==: "VA *" отличается по уровням косвенного обращения от "VA"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(76,8): warning C4013:  free: нет определения; предполагается "extern" с возвратом типа "int"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(143,33): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(143,33): warning C4024:  _read: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(163,33): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(163,33): warning C4024:  _read: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(183,33): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(183,33): warning C4024:  _read: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(204,33): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(204,33): warning C4024:  _read: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(219,33): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(219,33): warning C4024:  _read: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(238,33): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(238,33): warning C4024:  _read: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(259,34): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(259,34): warning C4024:  _write: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(274,34): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(274,34): warning C4024:  _write: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(295,34): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(295,34): warning C4024:  _write: различные типы для формального и фактического параметров 1
+D:\visual studio\repos\test\ttest\ttest\ttest.c(316,34): warning C4047:  функция: "VA" отличается по уровням косвенного обращения от "VA *"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(316,34): warning C4024:  _write: различные типы для формального и фактического параметров 1
+  ttest.vcxproj -> D:\visual studio\repos\test\ttest\Debug\ttest.exe

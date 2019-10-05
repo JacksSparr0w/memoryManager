@@ -38,12 +38,48 @@ void malloc_lack_of_memory() {
 }
 
 void malloc_unknown_error() {
+	/*
 	free(list);
 	list = NULL;
 
 	VA va1;
 	int err = _malloc(&va1, 10);
 	assert(1 == err);
+	*/
+	VA va1 = (VA)malloc(sizeof(VA));
+	VA va2 = (VA)malloc(sizeof(VA));
+	VA va3 = (VA)malloc(sizeof(VA));
+	VA va4 = (VA)malloc(sizeof(VA));
+	VA va5 = (VA)malloc(sizeof(VA));
+
+
+	list = (List*)malloc(sizeof(List));
+	list->size_memory = 5;
+	list->size_free_memory = 5;
+	list->head = NULL;
+	list->last = NULL;
+
+	_malloc(&va1, 1);
+	_malloc(&va2, 1);
+	_malloc(&va3, 1);
+	_malloc(&va4, 1);
+	_malloc(&va5, 1);
+
+	//_free(va2);
+	//_free(va4);
+	MemoryBlock* block = list->head;
+	while (block != NULL) {
+		if (block->va == va2 || block->va == va4) {
+			block->previous->next = block->next;
+			block->next->previous = block->previous;
+			list->size_free_memory += block->size;
+			free(block->va);
+		}
+		block = block->next;
+	}
+
+	int err = _malloc(&va2, 2);
+
 }
 
 void malloc_succesful_implementation() {

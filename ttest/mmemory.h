@@ -5,6 +5,9 @@
 #define INVALID_PARAMETERS -1;
 #define UNKNOWN_ERROR 1;
 #define LACK_OF_MEMORY -2;
+
+#define FREE 1;
+#define NOTFREE 0;
 /************************************************************************
 		Лабораторная работа №1
 
@@ -19,6 +22,8 @@ typedef char* VA;				// Тип описывающий адрес блока
 typedef struct MemoryBlock {	// Тип описывающий блок памяти
 	VA* va;
 	size_t size;
+	size_t startByte;
+	int free;						// 1 - free, 0 - not
 	struct MemoryBlock* next;
 	struct MemoryBlock* previous;
 } MemoryBlock;
@@ -119,8 +124,4 @@ int _init(int n, int szPage);
 
 MemoryBlock* newMemoryBlock(size_t size);
 
-MemoryBlock* findBlock(VA ptr);
-
-List* getList();
-
-int set(List list);
+MemoryBlock* findBlock(VA ptr, int free);
