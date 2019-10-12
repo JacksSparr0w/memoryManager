@@ -8,7 +8,7 @@ List* list;
 
 int _malloc(VA* ptr, size_t szBlock)
 {
-	if (ptr == NULL || szBlock == NULL) {
+	if (ptr == NULL || &szBlock == NULL) {
 		return INVALID_PARAMETERS;
 	}
 	if (list == NULL) {
@@ -44,7 +44,7 @@ int _malloc(VA* ptr, size_t szBlock)
 	}
 	block = block->next;
 	while (block!= NULL) {
-		int freeSpace = block->startByte - block->previous->startByte - block->previous->size;
+		size_t freeSpace = block->startByte - block->previous->startByte - block->previous->size;
 		if (freeSpace >= szBlock) {
 			MemoryBlock* newBlock = newMemoryBlock(szBlock);
 			newBlock->next = block;
@@ -59,7 +59,7 @@ int _malloc(VA* ptr, size_t szBlock)
 		}
 		block = block->next;
 	}
-	int freeSpaceAfterLast = list->size_memory - list->last->startByte - list->last->size;
+	size_t freeSpaceAfterLast = list->size_memory - list->last->startByte - list->last->size;
 	if (freeSpaceAfterLast >= szBlock) {
 		MemoryBlock* newBlock = newMemoryBlock(szBlock);
 		newBlock->next = NULL;
@@ -81,10 +81,8 @@ int _free(VA ptr)
 	if (list == NULL) {
 		return UNKNOWN_ERROR;
 	}
-	MemoryBlock* block = findBlock(ptr, 0);
-	if (block == NULL) {
-		block = findBlock(ptr, 1);
-	}
+	MemoryBlock* block = findBlock(ptr);
+
 	if (ptr == NULL || block == NULL) {
 		return INVALID_PARAMETERS;
 	}
@@ -115,17 +113,29 @@ int _read(VA ptr, void* pBuffer, size_t szBuffer)
 	if (list == NULL) {
 		return UNKNOWN_ERROR;
 	}
-	MemoryBlock* block = findBlock(ptr, 0);
-	if (ptr == NULL || pBuffer == NULL || szBuffer < 0 || block == NULL) {
+
+	if (ptr == NULL || pBuffer == NULL || szBuffer < 0) {
 		return INVALID_PARAMETERS;
 	}
-	if (block->size <= szBuffer) {
-		memcpy(pBuffer, ptr, block->size);
-		return SUCCESS;
+
+	MemoryBlock* block = list->head;
+	while (block != NULL) {
+		for (int i = 0; i < block->size; i++) {
+			VA va = block->va + i;
+			if (va == ptr) {
+				if (szBuffer >= block->size - i) {
+					memcpy(pBuffer, va, szBuffer);
+					return SUCCESS;
+				}
+				else {
+					return LACK_OF_MEMORY;
+				}
+				
+			}
+		}
+		block = block->next;
 	}
-	else {
-		return LACK_OF_MEMORY;
-	}
+	return INVALID_PARAMETERS;
 }
 
 int _write(VA ptr, void* pBuffer, size_t szBuffer)
@@ -134,18 +144,28 @@ int _write(VA ptr, void* pBuffer, size_t szBuffer)
 		return UNKNOWN_ERROR;
 	}
 
-	MemoryBlock* block = findBlock(ptr, 1);
-	if (ptr == NULL || pBuffer == NULL || szBuffer < 0 || block == NULL) {
+	if (ptr == NULL || pBuffer == NULL || szBuffer < 0) {
 		return INVALID_PARAMETERS;
 	}
 
-	if (block->size >= szBuffer) {
-		memcpy(ptr, pBuffer, block->size);
-		return SUCCESS;
+	MemoryBlock* block = list->head;
+	while (block != NULL) {
+		for (int i = 0; i < block->size; i++) {
+			VA va = block->va + i;
+			if (va == ptr) {
+				if (szBuffer <= block->size - i) {
+					memcpy(va, pBuffer, szBuffer);
+					return SUCCESS;
+				}
+				else {
+					return LACK_OF_MEMORY;
+				}
+
+			}
+		}
+		block = block->next;
 	}
-	else {
-		return LACK_OF_MEMORY;
-	}
+	return INVALID_PARAMETERS;
 }
 
 int _init(int n, int szPage)
@@ -153,9 +173,11 @@ int _init(int n, int szPage)
 	if (n <= 0 || szPage <= 0) {
 		return INVALID_PARAMETERS;
 	}
+	/*
 	if (list != NULL) {
 		free(list);
 	}
+	*/
 	list = (List*)malloc(sizeof(List));
 	if (list == NULL) {
 		return UNKNOWN_ERROR;
@@ -170,18 +192,19 @@ int _init(int n, int szPage)
 
 MemoryBlock* newMemoryBlock(size_t size) {
 	MemoryBlock* memoryBlock = (MemoryBlock*)malloc(sizeof(MemoryBlock));
-	memoryBlock->va = (VA*)malloc(size * sizeof(VA));
+	memoryBlock->va = (VA)malloc(size * sizeof(VA));
 	memoryBlock->size = size;
-	memoryBlock->free = FREE;
 	return memoryBlock;
 }
 
-MemoryBlock* findBlock(VA ptr, int free) {
+MemoryBlock* findBlock(VA ptr) {
 	MemoryBlock* block = list->head;
 	while (block != NULL) {
-		if (block->va == ptr && block->free == free) {
-			return block;
-		}
+			for (int i = 0; i < block->size; i++) {
+				if (block->va + i == ptr) {
+					return block;
+				}
+			}
 		block = block->next;
 	}
 	return NULL;

@@ -1,15 +1,15 @@
-﻿  mmemory.c
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(11,36): warning C4047:  ==: "size_t" отличается по уровням косвенного обращения от "void *"
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(30,22): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(42,22): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(48,17): warning C4018:  >=: несоответствие типов со знаком и без знака
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(57,23): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(63,25): warning C4018:  >=: несоответствие типов со знаком и без знака
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(72,22): warning C4047:  =: "VA" отличается по уровням косвенного обращения от "VA *"
-D:\visual studio\repos\test\ttest\ttest\mmemory.c(182,24): warning C4047:  ==: "VA *" отличается по уровням косвенного обращения от "VA"
+﻿  ttest.c
+D:\visual studio\repos\test\ttest\ttest\mmemory.h(83,50): warning C4028:  формальный параметр 1 отличается от объявления
+D:\visual studio\repos\test\ttest\ttest\mmemory.h(83,50): warning C4273:  _read: несовместимая компоновка dll
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_io.h(250,26): message :  см. предыдущее определение "_read"
+D:\visual studio\repos\test\ttest\ttest\mmemory.h(101,51): warning C4028:  формальный параметр 1 отличается от объявления
+D:\visual studio\repos\test\ttest\ttest\mmemory.h(101,51): warning C4028:  формальный параметр 2 отличается от объявления
+D:\visual studio\repos\test\ttest\ttest\mmemory.h(101,51): warning C4273:  _write: несовместимая компоновка dll
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_io.h(292,26): message :  см. предыдущее определение "_write"
+D:\visual studio\repos\test\ttest\ttest\ttest.c(381,18): warning C4244:  функция: преобразование "time_t" в "unsigned int", возможна потеря данных
   Создание кода
-  6 of 30 functions (20.0%) were compiled, the rest were copied from previous compilation.
+  4 of 34 functions (11.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   ttest.vcxproj -> D:\visual studio\repos\test\ttest\Release\ttest.exe
