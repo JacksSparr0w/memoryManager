@@ -1,4 +1,8 @@
-﻿  ttest.c
+﻿  mmemory.c
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(123,21): warning C4018:  <: несоответствие типов со знаком и без знака
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(153,21): warning C4018:  <: несоответствие типов со знаком и без знака
+  ttest.c
+D:\visual studio\repos\test\ttest\ttest\mmemory.c(203,22): warning C4018:  <: несоответствие типов со знаком и без знака
 D:\visual studio\repos\test\ttest\ttest\mmemory.h(83,50): warning C4028:  формальный параметр 1 отличается от объявления
 D:\visual studio\repos\test\ttest\ttest\mmemory.h(83,50): warning C4273:  _read: несовместимая компоновка dll
 D:\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_io.h(250,26): message :  см. предыдущее определение "_read"
@@ -6,5 +10,7 @@ D:\visual studio\repos\test\ttest\ttest\mmemory.h(101,51): warning C4028:  фо�
 D:\visual studio\repos\test\ttest\ttest\mmemory.h(101,51): warning C4028:  формальный параметр 2 отличается от объявления
 D:\visual studio\repos\test\ttest\ttest\mmemory.h(101,51): warning C4273:  _write: несовместимая компоновка dll
 D:\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_io.h(292,26): message :  см. предыдущее определение "_write"
+  Создание кода...
 D:\visual studio\repos\test\ttest\ttest\ttest.c(381,18): warning C4244:  функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LINK : не найден или не выполнена сборка D:\visual studio\repos\test\ttest\Debug\ttest.exe при последней инкрементной компоновке; выполняется полная компоновка
   ttest.vcxproj -> D:\visual studio\repos\test\ttest\Debug\ttest.exe
